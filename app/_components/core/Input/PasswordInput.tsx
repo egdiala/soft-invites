@@ -4,7 +4,7 @@ import { cn } from '@/app/libs/cn'
 import { forwardRef, Fragment, useState, type ReactNode } from 'react'
 import { Description, Field, Input, Label } from '@headlessui/react'
 import './input.css'
-import { RenderIf } from '../RenderIf';
+import { RenderIf } from '../RenderIf'
 
 interface InputProps extends React.AllHTMLAttributes<HTMLInputElement> {
   /**
