@@ -1,21 +1,32 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-neutral-100;
+  font-family: "SF Pro Display", sans-serif;
+}
+
+.ellipse-1 {
+  @apply absolute size-96 -top-80 left-0 bg-chathams-blue opacity-10;
+  filter: blur(86.3674px);
+}
+
+.ellipse-2 {
+  @apply absolute size-96 -bottom-20 -left-20 bg-purple-haze opacity-10;
+  filter: blur(86.3674px);
+}
+
+.ellipse-3 {
+  @apply absolute size-96 -top-20 -right-20 bg-eastern-blue opacity-10;
+  filter: blur(86.3674px);
+}
+
+.glass-variant {
+  background: linear-gradient(
+    94.9deg,
+    rgba(31, 36, 39, 0.4) 0%,
+    rgba(31, 36, 39, 0.2) 100%
+  );
 }
