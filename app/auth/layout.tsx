@@ -12,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased overflow-hidden">
         <div className="ellipse-1" />
         <div className="ellipse-2" />
         <div className="ellipse-3" />

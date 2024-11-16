@@ -9,17 +9,17 @@ body {
 }
 
 .ellipse-1 {
-  @apply absolute size-96 -top-80 left-0 bg-chathams-blue opacity-10;
+  @apply absolute size-14 md:size-20 lg:size-96 -top-80 left-0 bg-chathams-blue opacity-10;
   filter: blur(86.3674px);
 }
 
 .ellipse-2 {
-  @apply absolute size-96 -bottom-20 -left-20 bg-purple-haze opacity-10;
+  @apply absolute size-14 md:size-20 lg:size-96 -bottom-20 lg:-bottom-0 -left-20 bg-purple-haze opacity-10;
   filter: blur(86.3674px);
 }
 
 .ellipse-3 {
-  @apply absolute size-96 -top-20 -right-20 bg-eastern-blue opacity-10;
+  @apply absolute size-14 md:size-20 lg:size-96 -top-20 -right-20 bg-eastern-blue opacity-10;
   filter: blur(86.3674px);
 }
 
