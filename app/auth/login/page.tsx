@@ -1,3 +1,4 @@
+import BaseButton from "@/app/_components/core/Button";
 import { InputField, PasswordInput } from "@/app/_components/core/Input";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +19,18 @@ export default function LoginPage() {
                     <div className="grid gap-6 w-full border border-neutral-80 p-6 rounded-xl glass-variant">
                         <InputField label="Email Address" type="text" />
                         <PasswordInput label="Password" actionLabel={<Link href="/auth/forgot-password" className="action-label">Forgot Password</Link>} />
+                        <div className="grid gap-4">
+                            <BaseButton theme="primary" type="button" block>Sign in</BaseButton>
+                            <div className="flex items-center gap-1 px-11">
+                                <hr className="flex-1 border-neutral-80" />
+                                <span className="font-semibold text-[0.625rem] text-neutral-base">OR</span>
+                                <hr className="flex-1 border-neutral-80" />
+                            </div>
+                            <BaseButton theme="secondary" type="button" block>Continue with Google</BaseButton>
+                        </div>
+                    </div>
+                    <div className="flex justify-center w-full border border-neutral-80 py-4 rounded-xl glass-variant">
+                        <span className="text-neutral-40 text-sm font-normal">I am new here?</span> &nbsp; <span className="cursor-pointer font-semibold text-teal text-sm">Get started</span>
                     </div>
                 </div>
             </div>

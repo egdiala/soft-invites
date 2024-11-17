@@ -1,0 +1,60 @@
+.soft-button {
+  @apply rounded-lg gap-2 whitespace-nowrap flex items-center justify-center w-fit font-semibold text-sm h-fit disabled:cursor-not-allowed hover:outline-none hover:outline-0 focus:outline-none transition-all duration-500 ease-out !important;
+}
+
+.soft-button--block {
+  @apply w-full !important;
+}
+
+.soft-button--48 {
+  @apply py-3.5 px-4 !important;
+}
+
+.soft-button--44 {
+  @apply py-3 px-4 !important;
+}
+
+.soft-button--40 {
+  @apply py-2.5 px-4 !important;
+}
+
+.soft-button--32 {
+  @apply py-1.5 px-4 !important;
+}
+
+.soft-button--primary {
+  @apply text-neutral-20 bg-teal data-[hover]:bg-primary-60 data-[disabled]:bg-primary-100 data-[disabled]:text-neutral-base data-[focus]:ring-2 data-[focus]:ring-offset-2 data-[focus]:ring-primary-60/45 transition duration-500 ease-out !important;
+}
+
+.soft-button--secondary {
+  @apply text-neutral-40 bg-neutral-90 data-[hover]:bg-neutral-80 data-[disabled]:bg-neutral-80 data-[disabled]:opacity-40 data-[disabled]:text-neutral-40 data-[focus]:ring-2 data-[focus]:ring-offset-2 data-[focus]:ring-neutral-80/45 transition duration-500 ease-out !important;
+}
+
+.soft-button--secondary-inverted {
+  @apply text-neutral-20 bg-neutral-80 data-[hover]:bg-neutral-90 data-[disabled]:bg-neutral-80 data-[disabled]:opacity-40 data-[disabled]:text-neutral-40 data-[focus]:ring-2 data-[focus]:ring-offset-2 data-[focus]:ring-neutral-90/45 transition duration-500 ease-out !important;
+}
+
+.soft-button--tertiary {
+  @apply text-neutral-20 bg-transparent data-[hover]:bg-neutral-80 data-[disabled]:bg-neutral-80 data-[disabled]:opacity-40 data-[disabled]:text-neutral-40 data-[focus]:ring-2 data-[focus]:ring-offset-2 data-[focus]:ring-neutral-80/45 transition duration-500 ease-out !important;
+}
+
+.soft-button--text {
+  @apply text-neutral-40 bg-transparent data-[hover]:text-neutral-20 data-[disabled]:text-neutral-base data-[disabled]:opacity-40  transition duration-500 ease-out !important;
+}
+
+.spinner {
+  animation-name: spin;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
