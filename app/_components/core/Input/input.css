@@ -22,9 +22,14 @@
   @apply font-semibold text-sm text-teal;
 }
 
+.toggle-password-icon {
+  @apply absolute bottom-3 flex items-center right-0 pr-4;
+}
+
 .password-blur--container {
   @apply absolute my-auto left-3 inset-y-0 h-5 rounded flex items-start flex-grow-0;
 }
+
 .password-blur {
   @apply absolute rounded flex w-full h-full;
   z-index: 1;

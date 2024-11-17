@@ -3,6 +3,9 @@
 import { cn } from '@/app/libs/cn'
 import { forwardRef, Fragment, useState, type ReactNode } from 'react'
 import { Description, Field, Input, Label } from '@headlessui/react'
+import { Icon } from "@iconify-icon/react"
+import solarEyeOutline from "@iconify-icons/solar/eye-outline"
+import solarEyeClosedOutline from "@iconify-icons/solar/eye-closed-outline"
 import './input.css'
 import { RenderIf } from '../RenderIf'
 
@@ -87,13 +90,7 @@ const PasswordInput = forwardRef(function PasswordInput({ label, error, optional
                         onClick={() => toggleVisibility()}
                         className={`${showPassword ? "toggle-password-icon" : "hidden"}`}
                     >
-                        {/* <RenderIf condition={togglePassword}>
-                            <Icon icon="solar:eye-closed-bold" className="size-5 right-3 text-grey-dark-1 -mt-[22px] absolute z-10" />
-                        </RenderIf>
-                        <RenderIf condition={!togglePassword}>
-                            <Icon icon="solar:eye-bold" className="size-5 right-3 text-grey-dark-1 -mt-[22px] absolute z-10" />
-                        </RenderIf> */}
-                        {togglePassword ? "show" : "hide"}
+                        <Icon icon={togglePassword ? solarEyeClosedOutline : solarEyeOutline} className="text-neutral-40" width={24} height={24} />
                     </button>
                 </RenderIf>
             </div>
