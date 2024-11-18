@@ -10,6 +10,7 @@ export default function LoginPage() {
                 <Image
                     src="/soft_invites.svg"
                     alt="Soft Invites logo"
+                    className="size-14 md:size-20"
                     width={80}
                     height={80}
                     priority
