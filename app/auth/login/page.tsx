@@ -5,7 +5,7 @@ import { BaseButton, InputField, PasswordInput } from "@/app/_components/core";
 
 export default function LoginPage() {
     return (
-        <div className="flex items-center justify-center h-screen p-5">
+        <div className="flex items-center justify-center h-dvh p-5">
             <div className="grid gap-6 justify-items-center max-w-[28.3125rem] w-full">
                 <Image
                     src="/soft_invites.svg"
