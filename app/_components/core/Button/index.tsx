@@ -32,7 +32,7 @@ interface BaseButtonProps extends ButtonProps {
 }
 
 
-const BaseButton = forwardRef(function BaseButton({ loading, block, theme = "primary", size = "44", children, className, ...props }: BaseButtonProps, ref: React.Ref<HTMLButtonElement>) {
+export const BaseButton = forwardRef(function BaseButton({ loading, block, theme = "primary", size = "44", children, className, ...props }: BaseButtonProps, ref: React.Ref<HTMLButtonElement>) {
     const btnStyle = useMemo(() => {
         return `soft-button--${theme}`
     }, [theme])
@@ -56,5 +56,3 @@ const BaseButton = forwardRef(function BaseButton({ loading, block, theme = "pri
         </Button>
     )
 })
-
-export default BaseButton;

@@ -1,8 +1,7 @@
-import BaseButton from "@/app/_components/core/Button";
-import { InputField, PasswordInput } from "@/app/_components/core/Input";
-import { Icon } from "@iconify/react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { Icon } from "@iconify/react";
+import { BaseButton, InputField, PasswordInput } from "@/app/_components/core";
 
 export default function LoginPage() {
     return (
@@ -15,7 +14,7 @@ export default function LoginPage() {
                     height={80}
                     priority
                 />
-                <h1 className="font-bold text-3xl text-neutral-20">Sign in to your account</h1>
+                <h1 className="font-bold text-2xl md:text-3xl text-neutral-20">Sign in to your account</h1>
                 <div className="grid gap-4 w-full">
                     <div className="grid gap-6 w-full border border-neutral-80 p-6 rounded-xl glass-variant">
                         <InputField label="Email Address" type="text" />
@@ -34,7 +33,7 @@ export default function LoginPage() {
                         </div>
                     </div>
                     <div className="flex justify-center w-full border border-neutral-80 py-4 rounded-xl glass-variant">
-                        <span className="text-neutral-40 text-sm font-normal">I am new here?</span> &nbsp; <span className="cursor-pointer font-semibold text-teal text-sm">Get started</span>
+                        <span className="text-neutral-40 text-sm font-normal">I am new here?</span> &nbsp; <Link className="cursor-pointer font-semibold text-teal text-sm" href="/auth/register">Get started</Link>
                     </div>
                 </div>
             </div>
