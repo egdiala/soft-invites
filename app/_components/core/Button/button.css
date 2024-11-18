@@ -1,5 +1,5 @@
 .soft-button {
-  @apply rounded-lg gap-2 whitespace-nowrap flex items-center justify-center w-fit font-semibold text-sm h-fit disabled:cursor-not-allowed hover:outline-none hover:outline-0 focus:outline-none transition-all duration-500 ease-out !important;
+  @apply rounded-lg gap-2 whitespace-nowrap flex items-center justify-center w-fit font-medium text-sm h-fit disabled:cursor-not-allowed hover:outline-none hover:outline-0 focus:outline-none transition-all duration-500 ease-out !important;
 }
 
 .soft-button--block {
