@@ -8,6 +8,7 @@ import solarEyeOutline from "@iconify-icons/solar/eye-outline"
 import solarEyeClosedOutline from "@iconify-icons/solar/eye-closed-outline"
 import './input.css'
 import { RenderIf } from '../RenderIf'
+import { AnimatePresence, motion } from 'motion/react'
 
 interface InputProps extends React.AllHTMLAttributes<HTMLInputElement> {
   /**
@@ -56,6 +57,11 @@ interface InputProps extends React.AllHTMLAttributes<HTMLInputElement> {
   [x: string]: unknown;
 }
 
+const variants = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: { opacity: 1, scale: 1 },
+};
+
 
 const PasswordInput = forwardRef(function PasswordInput({ label, error, optional, actionLabel, iconLeft, iconRight, className, help, disabled, passive, showPassword, ...props }: InputProps, ref: React.Ref<HTMLInputElement>) {
     const [togglePassword, setTogglePassword] = useState<boolean>(false);
@@ -90,7 +96,31 @@ const PasswordInput = forwardRef(function PasswordInput({ label, error, optional
                         onClick={() => toggleVisibility()}
                         className={`${showPassword ? "toggle-password-icon" : "hidden"}`}
                     >
-                        <Icon icon={togglePassword ? solarEyeClosedOutline : solarEyeOutline} className="text-neutral-40" width={24} height={24} />
+                        <AnimatePresence mode="wait" initial={false}>
+                            {togglePassword ? (
+                                <motion.span
+                                    key="checkmark"
+                                    variants={variants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="hidden"
+                                    className="grid place-content-center"
+                                >
+                                    <Icon icon={solarEyeClosedOutline} className="text-neutral-40" width={24} height={24} />
+                                </motion.span>
+                                ) : (
+                                <motion.span
+                                    key="copy"
+                                    variants={variants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="hidden"
+                                    className="grid place-content-center"
+                                >
+                                    <Icon icon={solarEyeOutline} className="text-neutral-40" width={24} height={24} />
+                                </motion.span>
+                            )}
+                        </AnimatePresence>
                     </button>
                 </RenderIf>
             </div>
