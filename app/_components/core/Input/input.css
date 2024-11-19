@@ -18,6 +18,10 @@
   @apply border border-red-500 transition-all duration-500 ease-out !important;
 }
 
+.soft-input--error {
+  @apply text-red-500 font-normal text-xs !important;
+}
+
 .action-label {
   @apply font-semibold text-sm text-teal;
 }

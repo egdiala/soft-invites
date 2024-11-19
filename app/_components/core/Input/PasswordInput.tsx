@@ -127,9 +127,13 @@ const PasswordInput = forwardRef(function PasswordInput({ label, error, optional
             <RenderIf condition={!!help}>
                 <Description className="text-sm/6 text-neutral-90">{help}</Description>
             </RenderIf>
-            <RenderIf condition={!!error}>
-                <span className="soft-input--error">{error}</span>
-            </RenderIf>
+            <AnimatePresence>
+                {
+                    !!error ? (
+                        <motion.span initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} className="soft-input--error">{error}</motion.span>
+                    ) : null
+                }
+            </AnimatePresence>
         </Field>
     )
 })

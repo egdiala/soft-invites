@@ -5,6 +5,7 @@ import { forwardRef, Fragment, type ReactNode } from 'react'
 import { Description, Field, Input, Label } from '@headlessui/react'
 import './input.css'
 import { RenderIf } from '../RenderIf';
+import { AnimatePresence, motion } from 'motion/react'
 
 interface InputProps extends React.AllHTMLAttributes<HTMLInputElement> {
   /**
@@ -74,9 +75,13 @@ const InputField = forwardRef(function InputField({ label, error, optional, acti
       <RenderIf condition={!!help}>
         <Description className="text-sm/6 text-neutral-90">{help}</Description>
       </RenderIf>
-      <RenderIf condition={!!error}>
-        <span className="soft-input--error">{error}</span>
-      </RenderIf>
+      <AnimatePresence>
+        {
+          !!error ? (
+            <motion.span initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} className="soft-input--error">{error}</motion.span>
+          ) : null
+        }
+      </AnimatePresence>
     </Field>
   )
 })
