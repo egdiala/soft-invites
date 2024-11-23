@@ -65,7 +65,7 @@ const variants = {
 
 const PasswordInput = forwardRef(function PasswordInput({ label, error, optional, actionLabel, iconLeft, iconRight, className, help, disabled, passive, showPassword, ...props }: InputProps, ref: React.Ref<HTMLInputElement>) {
     const [togglePassword, setTogglePassword] = useState<boolean>(false);
-  
+
     const toggleVisibility = () => {
         setTogglePassword(togglePassword ? false : true);
     };
@@ -84,10 +84,16 @@ const PasswordInput = forwardRef(function PasswordInput({ label, error, optional
                 <Input as={Fragment}>
                     {() => <input ref={ref} type={showPassword && togglePassword ? "text" : "password"} className={cn("soft-input peer", iconLeft && `soft-input--left`, iconRight && `soft-input--right`, error ? "soft-input--border-error" : "soft-input--border", className)} {...props} /> }
                 </Input>
-                <RenderIf condition={!!props.value}>
-                    <div className="password-blur--container">
+                <RenderIf condition={!!props.value && !togglePassword}>
+                    <div className="password-blur--container text-transparent">
                         {(props?.value as string)?.split("")?.map(() => "•")}
-                        <div className="password-blur" />
+                        <AnimatePresence>
+                            {
+                                (!togglePassword) ? (
+                                    <motion.div animate={{ opacity: 1 }} transition={{ type: "keyframes", ease: "easeOut", duration: 0.8 }} className="password-blur" />
+                                ) : null
+                            }
+                        </AnimatePresence>
                     </div>
                 </RenderIf>
                 <RenderIf condition={!!showPassword}>

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { ReactQueryClientProvider } from "@/app/_components/ReactQueryClientProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,18 +11,15 @@ export const viewport: Viewport = {
   themeColor: "#0D9488"
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+
   return (
-    <html lang="en">
-      <body
-        className="antialiased"
-      >
-        {children}
-      </body>
-    </html>
+    <ReactQueryClientProvider>
+      <html lang="en">
+        <body className="antialiased">
+            {children}
+        </body>
+      </html>
+    </ReactQueryClientProvider>
   );
 }
